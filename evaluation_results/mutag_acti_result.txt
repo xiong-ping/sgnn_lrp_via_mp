@@ -1,0 +1,44 @@
+models/gin-3-mutag.torch
+Model depth: 3, model: gin, nb of samples: 188
+alpha 0.0, took 51.4844 s
+	 auac_pos : -5.6676	 auac_neg : 11.7828
+alpha 0.05, took 85.9262 s
+	 auac_pos : -5.4776	 auac_neg : 11.7332
+alpha 0.1, took 85.1022 s
+	 auac_pos : -5.4683	 auac_neg : 11.7672
+alpha 0.15000000000000002, took 83.0438 s
+	 auac_pos : -5.4066	 auac_neg : 11.6702
+alpha 0.2, took 83.6513 s
+	 auac_pos : -5.2582	 auac_neg : 11.7696
+alpha 0.25, took 84.2097 s
+	 auac_pos : -5.2319	 auac_neg : 11.7587
+alpha 0.30000000000000004, took 83.558 s
+	 auac_pos : -5.2012	 auac_neg : 11.8342
+alpha 0.35000000000000003, took 84.4522 s
+	 auac_pos : -5.145	 auac_neg : 11.8458
+alpha 0.4, took 81.2157 s
+	 auac_pos : -5.1473	 auac_neg : 11.8903
+alpha 0.45, took 82.3044 s
+	 auac_pos : -5.0846	 auac_neg : 11.9197
+alpha 0.5, took 82.8606 s
+	 auac_pos : -4.9896	 auac_neg : 11.8181
+alpha 0.55, took 84.1084 s
+	 auac_pos : -4.9513	 auac_neg : 11.6506
+alpha 0.6000000000000001, took 85.9307 s
+	 auac_pos : -4.923	 auac_neg : 11.3014
+alpha 0.65, took 84.7279 s
+	 auac_pos : -4.8503	 auac_neg : 11.1522
+alpha 0.7000000000000001, took 82.9023 s
+	 auac_pos : -4.6902	 auac_neg : 10.888
+alpha 0.75, took 87.096 s
+	 auac_pos : -4.4868	 auac_neg : 10.6884
+alpha 0.8, took 85.9722 s
+	 auac_pos : -4.2047	 auac_neg : 10.3927
+alpha 0.8500000000000001, took 84.0237 s
+	 auac_pos : -3.7738	 auac_neg : 10.1459
+alpha 0.9, took 83.325 s
+	 auac_pos : -3.2517	 auac_neg : 9.9368
+alpha 0.9500000000000001, took 82.4284 s
+	 auac_pos : -2.8867	 auac_neg : 9.6943
+alpha 1.0, took 82.4081 s
+	 auac_pos : -2.9316	 auac_neg : 9.2649

@@ -1,0 +1,6 @@
+.ipynb_checkpoints/*
+.vscode/*
+__pycache__/*
+datasets/Graph-SST2/*
+imgs/*
+.gitignore

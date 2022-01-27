@@ -256,3 +256,66 @@ def subgraph_mp_forward_hook(nn: GNN, g: Dict, S: List, alpha: float = 0.0, gamm
         print(f"forward_hook\tnbnodes: {g.get_adj().shape[0]},\tlayers: {len(nn.blocks)-1},\tforward1: {time_forward:.6f},\tbackward1: {time_backward:.6f},\tforward2: {time_forward2:.6f},\tbackward2: {time_backward2:.6f}")
 
     return (rel_1 - rel_2)[0]
+
+
+
+def subgraph_mp_transcription_no_save(A, nn, H0=None, gammas=None):
+    model_depth = len(nn.blocks)-1
+    if gammas == None:
+        gammas = np.linspace(3,0,model_depth)
+
+    masks = [1]*(len(nn.blocks)-1)
+
+    H0 = nn.ini(A, H0)
+    H = nn.blocks[0].forward(H0,torch.eye(H0.shape[0]).unsqueeze(0)).detach()
+    A = nn.adj(A)
+
+    # transforms = []
+    Hs = []
+
+    block_no = 0
+    for l,mask in zip(nn.blocks[1:],masks):
+        block_no += 1
+        gamma = gammas[block_no - 1]
+
+        Hin = H
+        n = Hin.shape[0]
+
+        transform_block = None
+
+        for Wo,Bo,Ao in zip(l.W,l.B,[A*mask]+[torch.eye(n).reshape(1,n,n)]*(len(l.W)-1)):
+
+            Hout = 0
+            weight = 0
+            bias = 0
+
+            for ao,wo,bo in zip(Ao,Wo.data,Bo.data):
+                bo = softmin(bo)
+                Hout = Hout + ao.permute(1,0).matmul(Hin).matmul(wo) + bo
+                # weight += (ao.unsqueeze(-1).unsqueeze(-1) * wo.unsqueeze(0).unsqueeze(0)).permute(0,2,1,3)
+                # bias += bo
+
+            # bias = bias + gamma * bias.clamp(min=0)
+            # transform = (weight + gamma * weight.clamp(min=0)) * Hin.unsqueeze(-1).unsqueeze(-1)
+
+            # transform = (transform / ((transform.sum(axis=0).sum(axis=0) + bias).unsqueeze(0).unsqueeze(0))).reshape([-1,n*transform.shape[-1]])
+
+            # if transform_block == None:
+            #     transform_block = transform
+            # else:
+            #     transform_block = transform_block @ transform
+
+            if Wo.shape[2] > 10:
+                Hin = Hout.clamp(min=0)
+            else:
+                Hin = Hout
+            
+            Hs.append(Hin)            
+
+        # transforms.append(transform_block.reshape([n,transform_block.shape[0]//n,n,transform_block.shape[1]//n]))
+
+        H = Hin
+
+    print(len(Hs))
+
+    return H.data / 20**.5, transforms

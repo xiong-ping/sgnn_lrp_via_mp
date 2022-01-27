@@ -1,0 +1,44 @@
+models/gcn-3-sst2graph.torch
+Model depth: 3, model: gcn, nb of samples: 200
+alpha 0.0, took 30.7893 s
+	 aupc_pos : 3.8275	 aupc_neg : 3.8801
+alpha 0.05, took 55.5512 s
+	 aupc_pos : 3.8111	 aupc_neg : 3.8805
+alpha 0.1, took 55.8105 s
+	 aupc_pos : 3.8159	 aupc_neg : 3.8778
+alpha 0.15000000000000002, took 54.5233 s
+	 aupc_pos : 3.8044	 aupc_neg : 3.8842
+alpha 0.2, took 55.066 s
+	 aupc_pos : 3.8299	 aupc_neg : 3.8857
+alpha 0.25, took 54.7877 s
+	 aupc_pos : 3.8366	 aupc_neg : 3.8964
+alpha 0.30000000000000004, took 54.3719 s
+	 aupc_pos : 3.9198	 aupc_neg : 3.8858
+alpha 0.35000000000000003, took 54.3634 s
+	 aupc_pos : 3.9078	 aupc_neg : 3.881
+alpha 0.4, took 54.5919 s
+	 aupc_pos : 3.8911	 aupc_neg : 3.8938
+alpha 0.45, took 54.372 s
+	 aupc_pos : 3.9053	 aupc_neg : 3.9034
+alpha 0.5, took 54.4542 s
+	 aupc_pos : 3.8969	 aupc_neg : 3.9459
+alpha 0.55, took 54.0443 s
+	 aupc_pos : 3.9189	 aupc_neg : 3.9669
+alpha 0.6000000000000001, took 55.1903 s
+	 aupc_pos : 3.9569	 aupc_neg : 3.9913
+alpha 0.65, took 54.2247 s
+	 aupc_pos : 4.0047	 aupc_neg : 4.0353
+alpha 0.7000000000000001, took 54.4133 s
+	 aupc_pos : 4.0747	 aupc_neg : 4.0981
+alpha 0.75, took 54.1134 s
+	 aupc_pos : 4.1667	 aupc_neg : 4.1779
+alpha 0.8, took 54.2488 s
+	 aupc_pos : 4.234	 aupc_neg : 4.307
+alpha 0.8500000000000001, took 54.1977 s
+	 aupc_pos : 4.2978	 aupc_neg : 4.4208
+alpha 0.9, took 54.1761 s
+	 aupc_pos : 4.3979	 aupc_neg : 4.5192
+alpha 0.9500000000000001, took 54.2725 s
+	 aupc_pos : 4.5482	 aupc_neg : 4.675
+alpha 1.0, took 54.054 s
+	 aupc_pos : 5.5343	 aupc_neg : 5.8137
